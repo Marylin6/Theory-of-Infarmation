@@ -1,0 +1,132 @@
+﻿<Window x:Class="lab2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Geffe Cipher" Height="350" Width="750" Background="#FF29316A">
+
+    <Grid Margin="10" Background="#FF29316A">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- КЛЮЧИ -->
+        <StackPanel Grid.Row="0" Grid.Column="0" Margin="0 0 0 15">
+            <TextBlock Text="Ключи LFSR (36 бит)" Foreground="White" FontFamily="Complex"/>
+            <TextBox x:Name="SeedBox1" Height="25" Margin="0 5 0 0"/>
+            <TextBox x:Name="SeedBox2" Height="25" Margin="0 5 0 0"/>
+            <TextBox x:Name="SeedBox3" Height="25" Margin="0 5 0 0"/>
+        </StackPanel>
+
+        <!-- ВЫБОР ФАЙЛА -->
+        <StackPanel Grid.Row="1" Grid.Column="0" Margin="0 0 0 15">
+            <Button Content="Выбрать файл"
+                    Width="120"
+                    Click="SelectFile_Click" FontFamily="Complex"/>
+            <TextBox x:Name="FilePathBox"
+                     Margin="0 5 0 0"
+                     IsReadOnly="True" Height="35" TextWrapping="NoWrap" HorizontalScrollBarVisibility="Auto"/>
+        </StackPanel>
+
+        <!-- КНОПКИ -->
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="0">
+            <Button Content="Зашифровать"
+                    Width="110"
+                    Click="Encrypt_Click" TextBlock.FontFamily="Complex"/>
+
+            <Button Content="Расшифровать"
+                    Width="131"
+                    Margin="10 0 0 0"
+                    Click="Decrypt_Click" Height="29" FontFamily="Complex"/>
+        </StackPanel>
+
+        <Grid Grid.Column="1" Grid.RowSpan="4" Margin="10 0 0 0">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>
+
+            <!-- ВЕРХНЯЯ ЧАСТЬ — КЛЮЧИ -->
+            <Grid Grid.Row="0">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!-- кнопки -->
+                <StackPanel Orientation="Horizontal">
+                    <Button Content="LFSR1" Width="75"  Click="ShowKey1_Click" FontFamily="Complex"/>
+                    <Button Content="LFSR2" Width="75"  Click="ShowKey2_Click" FontFamily="Complex"/>
+                    <Button Content="LFSR3" Width="75"  Click="ShowKey3_Click" FontFamily="Complex"/>
+                </StackPanel>
+
+                <!-- вывод ключа -->
+                <TextBox x:Name="KeyStreamBox"
+                 Grid.Row="1"
+                 VerticalScrollBarVisibility="Auto"
+                 TextWrapping="Wrap"
+                 AcceptsReturn="True"/>
+
+            </Grid>
+
+            <!-- НИЖНЯЯ ЧАСТЬ — ДВА ПОЛЯ ВЫВОДА -->
+            <Grid Grid.Row="1" Margin="0 10 0 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Левое поле - Зашифрованный файл -->
+                <Grid Grid.Column="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="(За/рас)шифрованный файл" 
+                               Foreground="White" 
+                               Margin="0 0 0 5"
+                               HorizontalAlignment="Center" FontFamily="Complex"/>
+
+                    <TextBox x:Name="EncryptedBox"
+                             Grid.Row="1"
+                             VerticalScrollBarVisibility="Auto"
+                             TextWrapping="Wrap"
+                             AcceptsReturn="True"
+                             Background="#FFEAEAEA"/>
+                </Grid>
+
+                <!-- Правое поле - Исходный/Расшифрованный файл -->
+                <Grid Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="Исходный файл" 
+                               Foreground="White" 
+                               Margin="0 0 0 5"
+                               HorizontalAlignment="Center" FontFamily="Complex"/>
+
+                    <TextBox x:Name="OriginalBox"
+                             Grid.Row="1"
+                             VerticalScrollBarVisibility="Auto"
+                             TextWrapping="Wrap"
+                             AcceptsReturn="True"
+                             Background="#FFEAEAEA"/>
+                </Grid>
+
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
