@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Программирование\\TI\\Lab3\\lab3\\lab3.csproj": {}
+    "D:\\Программирование\\TI\\Lab3\\Lab3\\lab3.csproj": {}
   },
   "projects": {
-    "D:\\Программирование\\TI\\Lab3\\lab3\\lab3.csproj": {
+    "D:\\Программирование\\TI\\Lab3\\Lab3\\lab3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Программирование\\TI\\Lab3\\lab3\\lab3.csproj",
+        "projectUniqueName": "D:\\Программирование\\TI\\Lab3\\Lab3\\lab3.csproj",
         "projectName": "lab3",
-        "projectPath": "D:\\Программирование\\TI\\Lab3\\lab3\\lab3.csproj",
+        "projectPath": "D:\\Программирование\\TI\\Lab3\\Lab3\\lab3.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
         "outputPath": "D:\\Программирование\\TI\\Lab3\\lab3\\obj\\",
         "projectStyle": "PackageReference",
